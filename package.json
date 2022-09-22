@@ -10,7 +10,8 @@
     "test": "cross-env SECRET_KEY=secret_key jest --forceExit"
   },
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.18.6",
