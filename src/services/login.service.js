@@ -10,13 +10,13 @@ const loginService = (email, password) => {
     throw new Error("Invalid email or password")
   }
 
-  const passwordMatch = bcrypt.compare(password, user.password)
+  const passwordMatch = bcrypt.compareSync(password, user.password)
 
   if (!passwordMatch) {
     throw new Error("Invalid email or password")
   }
 
-  const token = jwt.sign({ email: email }, "SECRET_KEY", { expiresIn: "24h" })
+  const token = jwt.sign({ email: email, isAdm: user.isAdm, id: user.id }, "SECRET_KEY", { expiresIn: "24h" })
 
   return token
 }

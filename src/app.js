@@ -1,25 +1,21 @@
-import express from "express";
-import "dotenv/config";
+import express from "express"
 
-import userRouter from "./routes/users.routes" 
+import "dotenv/config"
 
-const app = express();
+import userRouter from "./routes/users.routes"
+import loginRouter from "./routes/login.routes"
 
-app.use(express.json());
+const app = express()
+
+app.use(express.json())
+
 app.use("/users", userRouter)
+app.use("/login", loginRouter)
 
-const PORT = process.env.PORT || 3000;
-
-/* 
-app.get("/", (req, res) => {
-  return res.status(200).json({
-    message: "está funcionando",
-  });
-}); 
-*/
+const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
-  console.log(`server is running at port ${PORT}`);
-});
+  console.log(`server is running at port ${PORT}`)
+})
 
-export default app;
+export default app
