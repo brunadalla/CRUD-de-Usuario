@@ -1,9 +1,9 @@
-import listUsersService from "../services/listUsers.service";
+import listUsersService from "../services/listUsers.service"
 
 const listUserController = (request, response) => {
-  const users = listUsersService();
+  const users = listUsersService()
 
-  return response.json(users);
-};
+  return response.json(users)
+}
 
-export default listUserController;
+export default listUserController

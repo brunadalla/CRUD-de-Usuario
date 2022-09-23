@@ -1,7 +1,7 @@
-import users from "../database";
+import users from "../database"
 
 const listUsersService = () => {
-  return users;
-};
+  return users
+}
 
-export default listUsersService;
+export default listUsersService

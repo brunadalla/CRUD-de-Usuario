@@ -1,16 +1,10 @@
-import createUserService from "../services/createUser.service";
+import createUserService from "../services/createUser.service"
 
 const createUserController = (request, response) => {
-  try {
-    const { name, email } = request.body;
-    const user = createUserService(name, email);
+  const { name, email } = request.body
+  const user = createUserService(name, email)
 
-    return response.json(user);
-  } catch (error) {
-    return response.status(400).json({
-      message: error.message,
-    });
-  }
-};
+  return response.status(201).json(user)
+}
 
-export default createUserController;
+export default createUserController
