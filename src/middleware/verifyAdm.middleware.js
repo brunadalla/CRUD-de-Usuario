@@ -10,7 +10,7 @@ const verifyAdmMiddleware = (request, response, next) => {
   
     if(!isAdm) {
         return response
-        .status(403)
+        .status(401)
         .json({ message: "Unauthorized Access" })
     }
   

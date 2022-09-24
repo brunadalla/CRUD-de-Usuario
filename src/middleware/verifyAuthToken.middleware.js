@@ -10,7 +10,7 @@ const verifyAuthTokenMiddleware = (request, response, next) => {
     }
   
     token = token.split(" ")[1]
-  
+
     jwt.verify(token, "SECRET_KEY", (error, decoded) => {
       if (error) {
           return response

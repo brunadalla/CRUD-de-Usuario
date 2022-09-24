@@ -11,7 +11,7 @@ const deleteUserController = (request, response) => {
 
     return response.status(200).json(deletedUser)
   } catch (error) {
-    return response.status(403).json({ message: error.message })
+    return response.status(401).json({ message: error.message })
   }
 }
 

@@ -8,7 +8,7 @@ const createUserService = async (name, email, password, isAdm) => {
   const hashedPassword = await bcrypt.hash(password, 10)
 
   const newUser = {
-    id: uuidv4(),
+    uuid: uuidv4(),
     name,
     email,
     isAdm,

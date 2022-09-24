@@ -6,9 +6,9 @@ const loginController = (request, response) => {
 
     const userLogin = loginService(email, password)
 
-    return response.status(200).json(userLogin)
+    return response.status(200).json({token: userLogin})
   } catch (error) {
-    return response.status(400).json({ message: error.message })
+    return response.status(401).json({ message: error.message })
   }
 }
 

@@ -3,7 +3,7 @@ import listUsersService from "../services/listUsers.service"
 const listUserController = (request, response) => {
   const users = listUsersService()
 
-  return response.json(users)
+  return response.status(200).json(users)
 }
 
 export default listUserController

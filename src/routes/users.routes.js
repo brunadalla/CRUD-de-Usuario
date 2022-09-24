@@ -16,7 +16,7 @@ router.post("", verifyEmailAvailabilityMiddleware, createUserController)
 router.get("", verifyAuthTokenMiddleware, verifyAdmMiddleware, listUserController)
 
 router.get("/profile", verifyAuthTokenMiddleware, profileController)
-router.patch("/:id", verifyAuthTokenMiddleware, editUserController)
-router.delete("/:id", verifyAuthTokenMiddleware, deleteUserController)
+router.patch("/:uuid", verifyAuthTokenMiddleware, editUserController)
+router.delete("/:uuidyarn", verifyAuthTokenMiddleware, deleteUserController)
 
 export default router

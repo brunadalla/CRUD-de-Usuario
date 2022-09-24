@@ -6,12 +6,12 @@ const deleteUserService = (token, id) => {
   const decodedToken = jwt.decode(token, { complete: true })
 
   const isAdm = decodedToken.payload.isAdm
-  const userId = decodedToken.payload.id
+  const userId = decodedToken.payload.uuid
 
-  const userIndex = users.findIndex((user) => user.id === id)
+  const userIndex = users.findIndex((user) => user.uuid === id)
 
   if (userId !== id && !isAdm) {
-    throw new Error("Forbidden access")
+    throw new Error("Unauthorized access")
   }
 
   users.splice(userIndex, 1)
