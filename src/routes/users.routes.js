@@ -8,6 +8,7 @@ import createUserController from "../controllers/createUser.controller"
 import listUserController from "../controllers/listUsers.controller"
 import profileController from "../controllers/profile.controller"
 import editUserController from "../controllers/editUser.controller"
+import deleteUserController from "../controllers/deleteUser.controller"
 
 const router = Router()
 
@@ -16,5 +17,6 @@ router.get("", verifyAuthTokenMiddleware, verifyAdmMiddleware, listUserControlle
 
 router.get("/profile", verifyAuthTokenMiddleware, profileController)
 router.patch("/:id", verifyAuthTokenMiddleware, editUserController)
+router.delete("/:id", verifyAuthTokenMiddleware, deleteUserController)
 
 export default router
