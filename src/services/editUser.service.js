@@ -19,7 +19,17 @@ const editUserService = (token, uuid, body) => {
   const editedUser = { ...body, isAdm: user.isAdm, updatedOn: date}
 
   users[userIndex] = { ...users[userIndex], ...editedUser }
+
+  const newUser = {
+    uuid: users[userIndex].uuid, 
+    name: users[userIndex].name, 
+    email: users[userIndex].email, 
+    isAdm: users[userIndex].isAdm, 
+    createdOn: users[userIndex].createdOn, 
+    updatedOn: users[userIndex].updatedOn
+  }
   
-  return {    name: users[userIndex].name,    email: users[userIndex].email,    uuid: users[userIndex].uuid,    updatedOn: users[userIndex].updatedOn,    createdOn: users[userIndex].createdOn,    isAdm: users[userIndex].isAdm,    password: users[userIndex].password,  }}
+  return newUser
+}
 
 export default editUserService

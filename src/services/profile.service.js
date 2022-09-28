@@ -7,9 +7,18 @@ const profileService = (token) => {
   const userId = decodedToken.payload.uuid
 
   const user = users.find((user) => user.uuid === userId)
-  delete user.password
+  const { uuid, name, email, isAdm, createdOn, updatedOn } = user
 
-  return user
+  const newUser = {
+    uuid, 
+    name, 
+    email, 
+    isAdm, 
+    createdOn, 
+    updatedOn
+  }
+
+  return newUser
 }
 
 export default profileService
