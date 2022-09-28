@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken"
 
 const verifyAuthTokenMiddleware = (request, response, next) => {
     let token = request.headers.authorization
-  
+
     if (!token) {
       return response
         .status(401)
@@ -18,8 +18,8 @@ const verifyAuthTokenMiddleware = (request, response, next) => {
           .json({ message: "Invalid Token" })
       }
     })
-  
     next()
-  }
+  
+}
   
   export default verifyAuthTokenMiddleware

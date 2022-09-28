@@ -1,8 +1,7 @@
 import jwt from "jsonwebtoken" 
 
-const verifyAdmMiddleware = (request, response, next) => {
+const verifyAdmMiddleware =  (request, response, next) => {
     let token = request.headers.authorization
-  
     token = token.split(" ")[1]
 
     const decodedToken = jwt.decode(token, {complete: true})
@@ -15,6 +14,6 @@ const verifyAdmMiddleware = (request, response, next) => {
     }
   
     next()
-  }
+}
   
   export default verifyAdmMiddleware

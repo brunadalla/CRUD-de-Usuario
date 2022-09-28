@@ -17,6 +17,6 @@ router.get("", verifyAuthTokenMiddleware, verifyAdmMiddleware, listUserControlle
 
 router.get("/profile", verifyAuthTokenMiddleware, profileController)
 router.patch("/:uuid", verifyAuthTokenMiddleware, editUserController)
-router.delete("/:uuidyarn", verifyAuthTokenMiddleware, deleteUserController)
+router.delete("/:uuid", verifyAuthTokenMiddleware, deleteUserController)
 
 export default router
