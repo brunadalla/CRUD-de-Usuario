@@ -1,4 +1,4 @@
-## Kenzie Hub
+## CRUD de Usuário
 Projeto realizado no quarto módulo do curso de **Formação em Desenvolvimento Full Stack da Kenzie Academy Brasil**
 
 O objetivo desse projeto é desenvolver um CRUD de usuário, criando algumas regras de acesso.
